@@ -3,10 +3,12 @@
   <ul>
     <li *ngFor="let workexp of workExpList" >
       <h2>{{workexp.role}}</h2>
-      <h3>{{workexp.company}}</h3 >
-      <h4>{{workexp.duration}}</h4 >
+      <h3>{{workexp.organization}}</h3 >
+      <h4>{{workexp.from}} - {{workexp.to?workexp.to:'Now'}}</h4 >
       <ul>
-        <li *ngFor="let desc of workexp.description" > {{desc}} </li>
+        <li *ngIf="workexp.key_responsibilities1"> {{workexp.key_responsibilities1}} </li>
+        <li *ngIf="workexp.key_responsibilities2"> {{workexp.key_responsibilities2}} </li>
+        <li *ngIf="workexp.key_responsibilities3"> {{workexp.key_responsibilities3}} </li>
       </ul>
     </li>
   </ul>

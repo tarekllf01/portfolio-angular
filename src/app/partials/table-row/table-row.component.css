@@ -1,0 +1,14 @@
+tr {
+  height: 40px;
+  width: 100%;
+}
+
+tr td {
+
+  padding-left: 0.5rem;
+}
+
+tr td:nth-child(even) {
+  text-align: right;
+  color: var(--green);
+}

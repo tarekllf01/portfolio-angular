@@ -1,3 +1,4 @@
+import { APIService } from './../api.service';
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
@@ -7,8 +8,14 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrls: ['./baner.component.css'],
 })
 export class BanerComponent implements OnInit {
-  fullName = 'MD TAREK HOSSEN';
-  constructor(private breakpointObserver: BreakpointObserver) { }
-  ngOnInit(): void { }
+  profile: any;
+  constructor(private breakpointObserver: BreakpointObserver, private apiService: APIService) { }
+  ngOnInit(): void {
+    this.apiService.getPersonalInformation().subscribe(
+      (res) => {
+        this.profile = res;
+      }
+    );
+  }
 }
 

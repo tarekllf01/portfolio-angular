@@ -14,7 +14,7 @@ table {
   outline: 1px solid white;
 }
 
-table tr {
+/* table tr {
   height: 40px;
 }
 
@@ -24,7 +24,7 @@ table tr td {
 
 table tr td:nth-child(even) {
   color: var(--green);
-}
+} */
 
 section p {
   font-size: 1.2rem;

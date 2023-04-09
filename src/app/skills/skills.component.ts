@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from '../Models/models';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'skills',
@@ -7,43 +8,19 @@ import { Skill } from '../Models/models';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  skills: Skill[] = [
-    {
-      name: 'PHP,Laravel',
-      level: 'Expert',
-      rating: 90
-    },
-    {
-      name: 'Mysql, MSSQL',
-      level: 'Expert',
-      rating: 90
-    },
-    {
-      name: 'HTML, CSS',
-      level: 'Expert',
-      rating: 90
-    },
-    {
-      name: 'Javascript',
-      level: 'Intermediate',
-      rating: 70
-    },
-    {
-      name: 'JavaScript Frameworks(Jquery,React,Angular)',
-      level: 'Intermediate',
-      rating: 60
-    },
-    {
-      name: 'Python',
-      level: 'Intermediate',
-      rating: 70
-    },
-  ];
+  skills: any;
 
-  constructor() {
+  constructor(private apiService: APIService) {
 
   }
   ngOnInit(): void {
-
+    this.apiService.getSkillInfo().subscribe(
+      (res) => {
+        this.skills = res;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 }

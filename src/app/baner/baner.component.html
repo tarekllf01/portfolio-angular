@@ -6,11 +6,11 @@
       <span>
           <span>Hi,</span> I am
       </span><br>
-      <span>{{fullName}}</span><br>
-      <span>Software Developer</span>
+      <span>{{profile.name}}</span><br>
+      <span>{{profile.profession}}</span>
   </div>
   <div class="profile">
       <div class="profile-bg"></div>
-      <img src="../../assets/tarek.png" alt="">
-  </div>
+      <img src="{{profile.profile_picture?profile.profile_picture:'../../assets/tarek.png'}}" alt="">
+    </div>
 </div>

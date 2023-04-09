@@ -2,16 +2,22 @@
   <h1 class="title">
       <span>Personal Information</span>
   </h1>
-  <table>
-      <tbody>
-          <tr *ngFor="let row of myData">
-              <td *ngFor="let col of row">{{col}}</td>
-          </tr>
-      </tbody>
-  </table>
-  <section>
-      <p *ngFor="let sentence of aboutMe">
-          {{sentence}}
-      </p>
-  </section>
+
+    <table>
+        <tbody *ngIf="myData; else noData">
+          <table-row key="Name" [value]="myData.name"></table-row>
+          <table-row key="DOB" [value]="myData.dob"></table-row>
+          <table-row key="Work Experience" [value]="myData.work_exp"></table-row>
+          <table-row key="Education" [value]="myData.max_education"></table-row>
+          <table-row key="Interest" [value]="myData.interest"></table-row>
+        </tbody>
+    </table>
+    <section>
+        <p>
+            {{myData?myData.description:'Something went wrong'}}
+        </p>
+    </section>
+  <ng-template #noData>
+    Something went wrong
+  </ng-template>
 </div>

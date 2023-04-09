@@ -1,13 +1,30 @@
 <div class="container">
   <h1>Contact</h1>
   <ul class="social-media">
-    <li><i class="bx bxl-gmail"></i></li>
-    <li><i class="bx bxl-facebook-circle"></i></li>
-    <li><i class="bx bxl-instagram"></i></li>
+    <li *ngIf="contact.email" >
+      <a href="mailto:{{contact.email}}">
+        <i class="bx bxl-gmail"></i>
+      </a>
+    </li>
+    <li *ngIf="contact.linkedin_link" >
+      <a target="_blank" href="{{contact.linkedin_link}}">
+        <i class="bx bxl-linkedin"></i>
+      </a>
+    </li>
+    <li *ngIf="contact.stack_overflow_link" >
+      <a target="_blank" href="{{contact.stack_overflow_link}}">
+        <i class="bx bxl-stack-overflow"></i>
+      </a>
+    </li>
+    <li *ngIf="contact.insta_link" >
+      <a target="_blank" href="{{contact.insta_link}}">
+        <i class="bx bxl-instagram"></i>
+      </a>
+    </li>
   </ul>
   <ul class="contact-info">
-    <li>Mobile: {{mobile}}</li>
-    <li>Email: {{email}}</li>
+    <li *ngIf="contact.mobile" >Mobile: {{contact.mobile}}</li>
+    <li *ngIf="contact.email" >Email: {{contact.email}}</li>
   </ul>
 
 </div>

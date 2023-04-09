@@ -10,7 +10,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { ResponsiveDirective } from './directives/responsive.directive';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TableRowComponent } from './partials/table-row/table-row.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +22,12 @@ import { ResponsiveDirective } from './directives/responsive.directive';
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
-    ResponsiveDirective
+    ResponsiveDirective,
+    TableRowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

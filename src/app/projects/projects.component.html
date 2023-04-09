@@ -1,13 +1,15 @@
 <div class="container">
   <h1>Projects</h1>
   <section *ngFor="let project of projects"  >
-    <h2>{{project.title}}</h2>
+    <h2>{{project.name}}</h2>
     <h3>
       <span>Technologies: </span>
       <span>{{project.technologies}} </span>
     </h3>
-    <ul *ngFor="let desc of project.description">
-        <li>{{desc}} </li>
+    <ul >
+        <li  *ngIf="project.project_key_points1"> {{project.project_key_points1}} </li>
+        <li *ngIf="project.project_key_points2" >{{project.project_key_points2}} </li>
+        <li *ngIf="project.project_role" > Project Role: {{project.project_role}} </li>
     </ul>
   </section>
 </div>
